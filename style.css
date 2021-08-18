@@ -1,0 +1,29 @@
+html{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aliceblue;
+}
+h1{
+    font-size:20px;
+    color: red;
+}
+#p1{
+    display: flex;
+    float: left;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid black;
+    padding:4px;
+}
+#p2{
+    display: flex;
+    float: right;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid black
+}
+#attack{
+    background-color: black;
+    color:red;
+    font-size: 10px;
+
+}
