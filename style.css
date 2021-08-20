@@ -37,15 +37,14 @@ hr{
     background-color: rgb(80, 107, 130);
     color:rgb(233, 180, 4);
     font-size: 10px;
-    margin: 10rem 40%;
+    margin: 3rem 39.5%;
     padding: 2rem;
     width:20rem;
     font-size: 90%;
 }
 #commentary{
     text-align: center;
-    margin:3rem 40%;
+    margin:2rem 40%;
     font-size: 1rem;
     border: 1px solid rgb(233, 180, 4);
-    ;
 }
