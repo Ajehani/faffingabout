@@ -1,12 +1,24 @@
 p1=document.querySelector('#p1')
-const game=(name,type,weapon)=>{
+const game=(name,type)=>{
     let health=20
     let ehealth=20
+    let selected
+    const chosenWeapon=()=>{
+        let w=document.querySelectorAll('input[name="weapon"]')
+        let sub=document.querySelector('#sub')
+        sub.addEventListener('click',()=>{
+            selected="Bare-Handed"
+            w.forEach(e=>{
+                if(e.checked){
+                    selected=e.value}})
+            return display()
+        })
+        console.log(selected)
+    }
     const damage=()=>{
         let comment=document.querySelector('#commentary')
         let ran=Math.floor(Math.random()*10)
-        console.log(ran)
-        if(ran===3||ran===4||ran===5||ran===6){
+        if(ran<=4){
             ehealth--
             document.getElementById('-4').textContent=`Health:${ehealth}`
             if(ehealth===0){
@@ -14,7 +26,7 @@ const game=(name,type,weapon)=>{
             }
             comment.textContent="Nice hit"
         }
-        else if(ran===7 || ran===8){
+        else if(ran>=8){
             health--
             document.getElementById('3').textContent=`Health:${health}`
             if(health===0){
@@ -37,18 +49,20 @@ const game=(name,type,weapon)=>{
         }
         document.getElementById('0').textContent=`Name:${name}`
         document.getElementById('1').textContent=`Type:${type}`
-        document.getElementById('2').textContent=`Weapon:${weapon}`
+        document.getElementById('2').textContent=`Weapon:${selected}`
         document.getElementById('3').textContent=`Health:${health}`
         document.getElementById('-1').textContent=`Name:Alidi`
         document.getElementById('-2').textContent=`Type:Slugger`
         document.getElementById('-3').textContent=`Weapon:He's got Heart`
         document.getElementById('-4').textContent=`Health:${ehealth}`
     }
-    return {display,damage};
+    return {chosenWeapon,damage};
 }
-let p=game("Son of Anti","Irkli","Himself")
-p.display()
-const attack=document.querySelector('#attack')
-attack.addEventListener('click',()=>{
-    p.damage()
-})
+// let n=prompt("Choose a Name")
+// let t=prompt("Choose a Type")
+// let p=game(n,t,"Himself")
+let p=game("Son of Anti","Irkli")
+p.chosenWeapon()
+// p.display()
+document.querySelector('#attack').addEventListener('click',()=>{
+    p.damage()})

@@ -48,3 +48,9 @@ hr{
     font-size: 1rem;
     border: 1px solid rgb(233, 180, 4);
 }
+fieldset{
+    width:10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
